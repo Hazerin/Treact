@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700;900&family=Lato:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    padding: 32px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.purple {
+    color:#7342d6;
+}
+
+/* Navigation */
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.025em;
+}
+
+.nav__links {
+    display: flex;
+    align-items: center;
+}
+
+.nav__link {
+    font-weight: 600;
+    /* rem è l'unità di misura del carattere di default nel browser (16 px solitamente) mentre em la cerca in base a quanti pixel sono stati specificati nel primo genitore che lo specifica) */
+    /* em si può usare come unità di misura per altro (padding etc..) ma si riferirà sempre alla font-size del primo parent che trova (anche se è un altro em a sua volta) che ne abbia una a cui fare riferimento, o in caso negativo, a quella di default del browser. */
+    font-size: 0.875rem;
+    margin: 0 24px;
+}
+
+.access {
+    margin: 0 0 0 36px;
+}
+
+.btn {
+    background-color: rgb(100, 21, 255);
+    color: white;
+    padding: 12px 32px;
+    font-size: 0.875rem;
+    border-radius: 9999px; /* arrotonda i bordi */
+    font-weight: 600;
+    border: 50px ridge red;        /* è un abbreviazione che non funziona inserendo solo la dimensione: come minimo è dimensione più stile, come 5px ridge. */
+    border-width: 5px 5px 5px 5px;
+    border: none; /* le altre proprietà border vengono cancellate da questa in quanto ultima. */
+}
+
+.logo {
+    width: 130px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo__image {
+    height: 40px;
+    /* l'altra misura se non specificata, viene adattata in proporzione */
+}
+
+.no-underline,
+.nav__link {
+    text-decoration: none;
+}
+
+/* Header */
+
+.header__container {
+    padding: 96px 0;
+    display: flex;
+}
+
+.header__presentation {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__presentation--para {
+    margin: 32px 0;
+    font-size: 1.125rem;
+    line-height: 1.4; /* senza specificare un unità di misura è in riferimento all'altezza di default tra righe */
+}
+
+.header__presentation--input {
+    position: relative; /* per poter usare absolute riferito a questo parent nel pulsante */
+    text-align: center;
+    width: 90%; /* input un pò accorciato da destra */
+    padding: 0 0 0 1px; /* come accorciarlo da sinistra */
+}
+
+input {
+    border-radius: 9999px;
+    border-width: 2px; /* spessore del contorno */
+    width: 100%;
+    font-weight: 500;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-right: 12rem;
+    padding-left: 2rem;
+}
+
+.header__img--wrapper {
+    width: 60%;
+}
+
+.header__img {
+    width: 100%; /* usa il 100% di spazio del contenitore, non più, non meno */
+}
+
+.header__btn {
+    position: absolute;
+    right: 0; /* gli elementi absolute si posizionano dandogli un posto preciso dove mettersi, in questo caso con le distanze dai bordi dell'elemento */
+    top: 0;
+    bottom: 0;
+    margin: 5px;
+}
+
+.header__presentation--trusted {
+    margin: 80px 0 0 0;
+    font-size: 12px;
+    color: rgb(160 174 192);
+    font-weight: 700;
+    letter-spacing: 0.05em; /* somma questo valore alla distanza di default tra le lettere */
+}
+
+.header__presentation--customers {
+    width: 100%;
+    opacity: 0.5;
+    padding: 0 100px 0 0;
+    margin: 16px 0 0 0;
+}
+
+/* Features */
+
+.features__container {
+    padding: 80px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* le funzionalità di align-items e justify-content sono scambiate con flex-direction: column! */
+}
+
+.features__services {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.features__tagline {
+    font-size: 16px;
+    margin: 0 0 16px;
+    color:#7342d6;
+    letter-spacing: 0.1em;
+}
+
+.features__service {
+    width: calc(100% / 3);
+    padding: 32px 8px;
+}
+
+.service__description {
+    display: flex;
+    align-items: start; /* perchè altrimenti gli elementi nello stesso blocco verrebbero allungati (l'opzione di default è infatti align-items: stretch */
+}
+
+.description__img {
+    border: 1px solid green;
+    border-radius: 9999px;
+    border-width: 1px;
+    padding: 1.25rem;
+}
+
+.description__text {
+    margin: 8px 0 0 16px;
+}
+
+.description--title {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.025em;
+}
+
+.description--para {
+    margin: 16px 0 0 0;
+    font-weight: 500;
+    margin: 16px 0 0 0;
+    color: rgb(124, 139, 161, 1);
+    line-height: 2;
+}
+
+.description--features {
+    width: 50%;
+    margin: 16px 0 40px 0;
+    line-height: 1.625;
+}
