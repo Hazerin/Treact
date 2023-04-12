@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700;900&family=Lato:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;700;900&family=Lato:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 * {
     padding: 0;
@@ -6,6 +6,13 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     color: #243E63;
+    /* le impostazioni generiche per essere sovrascritte devono essere specificate direttamente nella classe di interesse! */
+}
+
+h2 {
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
 }
 
 ul {
@@ -25,11 +32,11 @@ h1 {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 32px;
+    padding: 32px 0;
 }
 
 
-.btn { /* un pulsante ha proprietà di default sue che hanno priorità su quelle dei parent, quindi vanno ridefinite */
+.btn {
     color: #f7fafc;
     background-color: #6415FF;
     padding: 12px 32px;
@@ -37,11 +44,19 @@ h1 {
     font-size: 0.875rem;
     border: none;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 600; /* va assegnato in quanto al button HTML è di default associato un font weight di default (ovvero vuoto) */
 }
 
 .purple {
     color: #6415FF;
+}
+
+.grey {
+    color: #a0aec0
+}
+
+.white {
+    color:white;
 }
 
 /* Navigation */
@@ -50,6 +65,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     letter-spacing: 0.025em;
+    font-weight: 600;
 }
 
 .nav__logo {
@@ -70,7 +86,6 @@ h1 {
 .nav__links {
     display: flex;
     align-items: center;
-    font-weight: 600;
 }
 
 .nav__link {
@@ -145,3 +160,218 @@ input {
 }
 
 /* features */
+
+.features__container {
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features--title {
+    font-weight: 900;
+}
+
+.features__para {
+    text-align: center;
+    width: 50%;
+    color: rgb(124, 139, 161);
+    margin-top: 25px;
+    line-height: 1.6;
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.features__services {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.features__service {
+    width: calc(100%/3);
+    display: flex;
+    align-items: start;
+    padding: 32px 24px;
+}
+
+.service__logo {
+    display: flex; /* per dare "forma" al contenitore e far in modo che il content della scatola sia esattamente pari in dimensioni all'immagine */
+    border: 1px solid gray;
+    border-radius: 9999px;
+    padding: 24px;
+}
+
+.service__description {
+    margin: 12px 0 0 12px;
+}
+
+.description__title {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.description__para {
+    color: rgb(124, 139, 161);
+    margin: 24px 0 0 0;
+    padding-right: 40px;
+    font-weight: 500;
+    line-height: 2;
+}
+
+/* Designed */
+
+.designed__wrapper {
+    display: flex;
+}
+
+.designed__text{
+    width: 50%;
+    padding: 15px 30px 15px 0;
+}
+
+.designed__image {
+    width: 50%;
+}
+
+.designed__image--resizer {
+    width: 100%;
+}
+
+.designed__para {
+    width: 100%;
+    color: rgb(124, 139, 161);
+    margin-top: 25px;
+    line-height: 1.6;
+    font-weight: 500;
+    font-size: 1.125rem;
+}
+
+.btn--designed {
+    margin: 32px 0 0;
+}
+
+/* Get started */
+
+.started__container {
+    padding: 96px 0;
+    display: flex;
+}
+
+.started__image {
+    width: 50%;
+    padding: 50px 0;
+}
+
+.started__steps {
+    width: 50%;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.started__image--resizer {
+    width: 100%;
+}
+
+.started__step {
+    margin-top: 24px;
+    display: flex;
+}
+
+.step__number {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: rgb(203, 213, 224);
+    margin-right: 25px;
+}
+
+.step__text {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.step__text--para {
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    line-height: 2;
+    padding-right: 25%;
+    color: rgb(113, 128, 150)
+}
+
+/* Pricing */
+
+.pricing__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.pricing__plans {
+    display: flex;
+    flex-wrap: wrap; /* cosi in modalità mobile va subito a capo senza dover creare una media query apposta per questa parte, perchè a risoluzioni alte non fa nulla (in questo caso perchè gli elementi ci stanno, ma in mobile metterò una width superiore a 1/3) */
+    width: 100%;
+}
+
+.plan__wrapper {
+    width: calc(100%/3);
+    padding: 10px;
+}
+
+.pricing__plan {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(226, 232, 240);
+    border-radius: 10px;
+}
+
+.plan__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0 7px 0;
+    border-bottom: 2px solid rgb(226, 232, 240);
+}
+
+.plan__type {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.plan__money {
+    font-weight: 700;
+    font-size: 3rem;
+    margin: 12px 0;
+}
+
+.plan__buy {
+    padding: 32px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan__description {
+    border-bottom: 2px solid rgb(226, 232, 240);
+}
+
+.plan__price {
+    
+}
+
+.btn--green {
+    background: linear-gradient(116deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%); /* colore dal basso all'alto, ruotato di 116 gradi verso destra il risultato finale */
+}
+
+.btn--white {
+    color: #6415FF;
+    background-color: rgb(247, 250, 252);
+}
+
+.btn--red {
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+}
