@@ -5,7 +5,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    color: #243E63;
     /* le impostazioni generiche per essere sovrascritte devono essere specificate direttamente nella classe di interesse! */
 }
 
@@ -320,6 +319,13 @@ input {
     padding: 10px;
 }
 
+.line__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .pricing__plan {
     width: 100%;
     display: flex;
@@ -357,10 +363,48 @@ input {
 
 .plan__description {
     border-bottom: 2px solid rgb(226, 232, 240);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 32px;
+    font-weight: 500;
 }
 
-.plan__price {
-    
+.description__plan {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.description__plan--para {
+    margin-top: 20px;
+    color: #718096;
+}
+
+.blue--template {
+    background: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
+}
+
+.line {
+    position: absolute;
+    top: 0; /* Meglio cosi che width 100%, non sborda */
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    border-top-right-radius: 9999px;
+    border-top-left-radius: 9999px;
+}
+
+.line--orangered {
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+}
+
+.line--marine {
+    background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+
+.para--white {
+    color: white;
 }
 
 .btn--green {
@@ -374,4 +418,41 @@ input {
 
 .btn--red {
     background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+}
+
+/* Footer */
+
+#foot {
+    background-color: rgb(100 21 255);
+    width: 100%;
+}
+
+.foot__links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.foot__links_container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100%/5);
+    align-items: center;
+}
+
+.foot__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3 {
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+h4 {
+    color: white;
+    font-weight: 500;
 }
