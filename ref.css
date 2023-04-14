@@ -401,6 +401,7 @@ footer {
 TABLETS
 */
 @media (max-width: 768px) {
+    
     .header__description {
         padding: 0 24px; /* per far tenere alle parole un pò di spazio dal lato dello schermo */
     }

@@ -5,6 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    position: relative;
     /* le impostazioni generiche per essere sovrascritte devono essere specificate direttamente nella classe di interesse! */
 }
 
@@ -20,6 +21,40 @@ ul {
 
 a {
     text-decoration: none;
+    transition: all 2000ms ease;
+    text-decoration: none;
+}
+
+a:after {
+    content: ""; /* le quotazioni vuote vogliono dire "genera questa classe", altrimenti in casi diversi si inseriva quella desiderata per farla apparire */
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    width: 0; /*diventerà 100% una volta che ci passo sopra col mouse ,vedi classe subito dopo */
+    bottom: -3px;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+a:after {
+    background-color: #fff;
+}
+
+a:hover:after {
+    width: 100%;
+    left: 0;  /* parte da sinistra e poi va verso destra */
+}
+
+.underline--resizer:after {
+    bottom: 4px;
+}
+
+.black--underline:after { /*come usare un modificatore after correttamente, non serve inventarsi un AND */
+    background-color: black;
+}
+
+.no--underline::after {
+    height: 0;
 }
 
 h1 {
@@ -95,6 +130,14 @@ h1 {
 
 .nav__link--login {
     margin: 0 24px 0 48px;
+}
+
+.nav__hamburger {
+    display: none;
+}
+
+.hamburger__menu {
+    display: none;
 }
 
 /* header */
@@ -179,6 +222,17 @@ input {
     line-height: 1.6;
     font-weight: 500;
     font-size: 1.125rem;
+    margin-bottom: 48px;
+}
+
+.pricing__para {
+    text-align: center;
+    width: 90%;
+    color: rgb(124, 139, 161);
+    margin: 15px 0;
+    line-height: 1.6;
+    font-weight: 500;
+    font-size: 1.125rem;
 }
 
 .features__services {
@@ -247,7 +301,7 @@ input {
 }
 
 .btn--designed {
-    margin: 32px 0 0;
+    margin: 32px 0 32px 0;
 }
 
 /* Get started */
@@ -425,6 +479,7 @@ input {
 #foot {
     background-color: rgb(100 21 255);
     width: 100%;
+    padding: 25px 0 40px;
 }
 
 .foot__links {
@@ -437,22 +492,255 @@ input {
     display: flex;
     flex-direction: column;
     width: calc(100%/5);
-    align-items: center;
+    align-items: start;
+    padding-left: 50px;
+}
+
+hr {
+    margin: 64px 0;
 }
 
 .foot__info {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-weight: 700;
+    color: white;
 }
 
 h3 {
+    margin-bottom: 20px;
     color: white;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 h4 {
+    margin-bottom: 10px;
     color: white;
     font-weight: 500;
+}
+
+.foot__info {
+    display: flex;
+}
+
+.foot__social_container {
+    display: flex;
+}
+
+.foot__logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    letter-spacing: 0.7px;
+}
+
+.logo__link {
+    height: 40px;
+}
+
+.resizer {
+    height: 100%;
+}
+
+.social {
+    background-color: white;
+    border-radius: 9999px;
+    height: 32px;
+    width: 32px;
+    padding: 8px;
+}
+
+.social:not(:last-child) {
+    margin-right: 20px;
+}
+
+/* Responsiveness */
+
+@media (max-width: 768px) {
+
+    .nav__links {
+        display: none;
+    }
+
+    body {
+        position: relative;
+    }
+
+    main {
+        padding: 0px 15px;
+    }
+
+    .nav__container {
+        padding: 0 30px;
+    }
+
+    .nav__link {
+        margin: 0 0 0 0;
+        font-size: 18px;
+    }
+
+    .links--mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 90%;
+        font-weight: 700;
+    }
+
+    .nav__hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border: none;
+    }
+
+    .hamburger--resizer {
+        width: 100%;
+    }
+
+    .hamburger__menu.menu--open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu--open {
+        z-index: 1;
+        position: fixed;
+        background-color: cyan;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        height: 30vh;
+    }
+
+    .btn--mobile {
+        padding: 20px 50px;
+    }
+
+    .cross {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .cross--resizer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        width: 100%;
+    }
+
+    h2 {
+        margin-bottom: 16px;
+    }
+
+    .h1--mobile {
+        font-size: 30px;
+    }
+
+    .header__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__presentation_text {
+        width: 100%;
+        align-items: center;
+    }
+
+    .header__presentation_text--para {
+        text-align: center;
+        width: 80%;
+        font-size: 16px;
+        margin: 25px 0;
+    }
+
+    .presentation__email {
+        margin: 0;
+    }
+
+    .header__customers {
+        width: 80%;
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .customers__img_container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .customers__img {
+        padding-right: 0;
+        width: 80%;
+    }
+
+
+    .features__para {
+        width: 85%;
+        margin-bottom: 0px;
+    }
+
+    .features__service {
+        width: 50%;
+    }
+
+    .designed__image {
+        display: flex;
+        align-items: center;
+    }
+
+    .h1--mobile {
+        font-size: 36px;
+    }
+
+    .designed__para {
+        letter-spacing: -0.5px;
+        font-size: 16px;
+        margin-top: 16px;
+    }
+
+    .btn--designed {
+        margin-top: 16px;
+    }
+
+    .started__image {
+        display: flex;
+        align-items: center;
+    }
+
+    .pricing__plans {
+        display: flex;
+        justify-content: center;
+    }
+
+    .plan__wrapper {
+        width: 60%;
+        margin: 30px 0;
+    }
+
+    .foot__links_container {
+        padding: 0 0 0 0;
+    }
+
+    #foot {
+        padding: 0 20px 20px;
+    }
+
 }
