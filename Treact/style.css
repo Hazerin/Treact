@@ -9,6 +9,10 @@
     /* le impostazioni generiche per essere sovrascritte devono essere specificate direttamente nella classe di interesse! */
 }
 
+body {
+    overflow-x: hidden; /* per prevenire l'allungamento della pagina quando le animazioni partono da fuori */
+}
+
 h2 {
     font-size: 16px;
     letter-spacing: 2px;
@@ -99,6 +103,22 @@ h1 {
     justify-content: space-between;
     letter-spacing: 0.025em;
     font-weight: 600;
+    animation: navslide 2s 250ms ease-in;
+}
+
+@keyframes navslide {
+    0% {
+        opacity: 0;
+        transform: translateY(-10vh);
+    }
+    40% {
+        opacity: 0.6;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav__logo {
@@ -144,6 +164,18 @@ h1 {
 .header__container {
     padding: 96px 0;
     display: flex;
+    animation: leftslider 1s 250ms ease-in;
+}
+
+@keyframes leftslider {
+    0% {
+        opacity: 0;
+        transform: translateX(-100vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .header__presentation_text {
@@ -207,6 +239,18 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: rightslider 1s 250ms ease-in;
+}
+
+@keyframes rightslider {
+    0% {
+        opacity: 0;
+        transform: translateX(100vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .features--title {
@@ -275,6 +319,18 @@ input {
 
 .designed__wrapper {
     display: flex;
+    animation: leftslider 1s 250ms ease-in;
+}
+
+@keyframes leftslider {
+    0% {
+        opacity: 0;
+        transform: translateX(-100vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .designed__text{
@@ -308,6 +364,18 @@ input {
 .started__container {
     padding: 96px 0;
     display: flex;
+    animation: rightslider 1s 250ms ease-in;
+}
+
+@keyframes rightslider {
+    0% {
+        opacity: 0;
+        transform: translateX(100vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .started__image {
@@ -359,6 +427,18 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    animation: leftslider 1s 250ms ease-in;
+}
+
+@keyframes leftslider {
+    0% {
+        opacity: 0;
+        transform: translateX(-100vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .pricing__plans {
@@ -479,6 +559,22 @@ input {
     background-color: rgb(100 21 255);
     width: 100%;
     padding: 25px 0 40px;
+    animation: footslide 1.5s 250ms ease-in;
+}
+
+@keyframes footslide {
+    0% {
+        opacity: 0;
+        transform: translateY(30vh);
+    }
+    80% {
+        opacity: 0.7;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .foot__links {
